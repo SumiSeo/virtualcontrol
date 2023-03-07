@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Label } from '@fluentui/react';
+import * as React from "react";
+import { Label } from "@fluentui/react";
 
 export interface IHelloWorldProps {
   name?: string;
@@ -7,10 +7,6 @@ export interface IHelloWorldProps {
 
 export class HelloWorld extends React.Component<IHelloWorldProps> {
   public render(): React.ReactNode {
-    return (
-      <Label>
-        {this.props.name}
-      </Label>
-    )
+    return <Label>{this.props.name}</Label>;
   }
 }

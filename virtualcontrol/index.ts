@@ -11,6 +11,8 @@ export class virtualcontrol
   /**
    * Empty constructor.
    */
+
+  //declare variable here
   constructor() {}
 
   /**
@@ -27,6 +29,7 @@ export class virtualcontrol
   ): void {
     this.notifyOutputChanged = notifyOutputChanged;
     console.log("hi");
+    //init function is for initializing component
   }
 
   /**

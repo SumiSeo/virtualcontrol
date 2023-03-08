@@ -57,9 +57,12 @@ export class virtualcontrol
     //set up proper value in init func
     this.defaultUserLists = UserInfoData;
     // this.newUserName = context.parameters.Username.raw || "";
-    this.newUserFirstName == null ? "" : context.parameters.UserFirstName.raw;
-    this.newUserLastName == null ? "" : context.parameters.UserLastName.raw;
-    this.newUserEmail == null ? "" : context.parameters.UserEmail.raw;
+    // this.newUserFirstName == null ? "" : context.parameters.UserFirstName.raw;
+    // this.newUserLastName == null ? "" : context.parameters.UserLastName.raw;
+    // this.newUserEmail == null ? "" : context.parameters.UserEmail.raw;
+    console.log(this.newUserFirstName);
+    console.log(this.newUserLastName);
+    console.log(this.newUserEmail);
     //init function is for initializing component
   }
 
@@ -78,6 +81,10 @@ export class virtualcontrol
       lastName: "seo",
       userEmail: "sumi@gmail.com",
     };
+    //grab the user input value and add it to json file
+    console.log("first", context.parameters.UserFirstName.raw);
+    console.log("last", context.parameters.UserLastName.raw);
+    console.log("email", context.parameters.UserEmail.raw);
     return React.createElement(UserLists);
   }
 

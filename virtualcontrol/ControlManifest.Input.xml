@@ -18,8 +18,8 @@
       -->
     </external-service-usage>
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="Username" display-name-key="Username" description-key="Username" of-type="SingleLine.Text" usage="bound" required="true" />
-    <property name="UserLastname" display-name-key="UserLastname" description-key="UserLastname" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="UserFirstName" display-name-key="UserFirstName" description-key="UserFirstName" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="UserLastName" display-name-key="UserLastName" description-key="UserLastName" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="UserEmail" display-name-key="UserEmail" description-key="UserEmail" of-type="SingleLine.Text" usage="bound" required="true" />
     <!--
       Property node's of-type attribute can be of-type-group attribute.

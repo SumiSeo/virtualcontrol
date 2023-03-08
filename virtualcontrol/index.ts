@@ -1,4 +1,5 @@
 import React from "react";
+import UserInfoData from "../userinfodata.json";
 
 //Component
 import { UserLists } from "./UserLists";
@@ -14,19 +15,19 @@ export class virtualcontrol
   private theComponent: ComponentFramework.ReactControl<IInputs, IOutputs>;
   private notifyOutputChanged: () => void;
   //The default value provided from the json data
-  private defaultUserLists: IUser[];
+  private defaultUserLists: IUserLists;
   //The new user value of current user
-  private newUser: IUser[];
+  private newUserFirstName: IUser;
+  private newUserLastName: IUser;
+  private newUserEmail: IUser;
   //The current value of the control, which will be returned
-  private currentUserLists: IUser[];
+  private currentUserLists: IUserLists;
   /**
    * Empty constructor.
    */
 
   //declare variable here
-  constructor() {
-    console.log("the component", this.theComponent);
-  }
+  constructor() {}
 
   /**
    * Used to initialize the control instance. Controls can kick off remote server calls and other initialization actions here.
@@ -38,10 +39,10 @@ export class virtualcontrol
 
   public createUserLists(users: IUser[]): React.ReactElement {
     const props: IUser = {
-      first_name: "sumi",
-      id: 1,
-      last_name: "seo",
-      email: "sumi@gmail.com",
+      firstName: "sumi",
+      userId: 1,
+      lastName: "seo",
+      userEmail: "sumi@gmail.com",
     };
     console.log("create user lists func test");
     return React.createElement(UserLists);
@@ -53,6 +54,12 @@ export class virtualcontrol
     state: ComponentFramework.Dictionary
   ): void {
     this.notifyOutputChanged = notifyOutputChanged;
+    //set up proper value in init func
+    this.defaultUserLists = UserInfoData;
+    // this.newUserName = context.parameters.Username.raw || "";
+    this.newUserFirstName == null ? "" : context.parameters.UserFirstName.raw;
+    this.newUserLastName == null ? "" : context.parameters.UserLastName.raw;
+    this.newUserEmail == null ? "" : context.parameters.UserEmail.raw;
     //init function is for initializing component
   }
 
@@ -66,10 +73,10 @@ export class virtualcontrol
   ): React.ReactElement {
     const props: IUser = {
       // username: context.parameters.Username.raw || "",
-      first_name: "sumi",
-      id: 1,
-      last_name: "seo",
-      email: "sumi@gmail.com",
+      firstName: "sumi",
+      userId: 1,
+      lastName: "seo",
+      userEmail: "sumi@gmail.com",
     };
     return React.createElement(UserLists);
   }

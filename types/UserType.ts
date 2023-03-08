@@ -1,8 +1,8 @@
 interface IUser {
-  id: number;
-  first_name: string;
-  last_name: string;
-  email: string;
+  userId: number;
+  firstName: string;
+  lastName: string;
+  userEmail: string;
 }
 
 export default IUser;

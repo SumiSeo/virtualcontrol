@@ -36,7 +36,7 @@ export class virtualcontrol
    * @param state A piece of data that persists in one session for a single user. Can be set at any point in a controls life cycle by calling 'setControlState' in the Mode interface.
    */
 
-  public createUserLists(users: IUser[]): JSX.Element {
+  public createUserLists(users: IUser[]): React.ReactElement {
     const props: IUser = {
       first_name: "sumi",
       id: 1,
@@ -61,7 +61,9 @@ export class virtualcontrol
    * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
    * @returns ReactElement root react element for the control
    */
-  public updateView(context: ComponentFramework.Context<IInputs>): JSX.Element {
+  public updateView(
+    context: ComponentFramework.Context<IInputs>
+  ): React.ReactElement {
     const props: IUser = {
       // username: context.parameters.Username.raw || "",
       first_name: "sumi",

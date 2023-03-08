@@ -1,19 +1,32 @@
+import React from "react";
+
+//Component
+import { UserLists } from "./UserLists";
+//types
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
-import { HelloWorld, IHelloWorldProps } from "./HelloWorld";
-import * as React from "react";
+import IUser from "../types/UserType";
+import IUserLists from "../types/UserListsType";
+import { create } from "domain";
 
 export class virtualcontrol
   implements ComponentFramework.ReactControl<IInputs, IOutputs>
 {
   private theComponent: ComponentFramework.ReactControl<IInputs, IOutputs>;
   private notifyOutputChanged: () => void;
-
+  //The default value provided from the json data
+  private defaultUserLists: IUser[];
+  //The new user value of current user
+  private newUser: IUser[];
+  //The current value of the control, which will be returned
+  private currentUserLists: IUser[];
   /**
    * Empty constructor.
    */
 
   //declare variable here
-  constructor() {}
+  constructor() {
+    console.log("the component", this.theComponent);
+  }
 
   /**
    * Used to initialize the control instance. Controls can kick off remote server calls and other initialization actions here.
@@ -22,13 +35,24 @@ export class virtualcontrol
    * @param notifyOutputChanged A callback method to alert the framework that the control has new outputs ready to be retrieved asynchronously.
    * @param state A piece of data that persists in one session for a single user. Can be set at any point in a controls life cycle by calling 'setControlState' in the Mode interface.
    */
+
+  public createUserLists(users: IUser[]): JSX.Element {
+    const props: IUser = {
+      first_name: "sumi",
+      id: 1,
+      last_name: "seo",
+      email: "sumi@gmail.com",
+    };
+    console.log("create user lists func test");
+    return React.createElement(UserLists);
+  }
+
   public init(
     context: ComponentFramework.Context<IInputs>,
     notifyOutputChanged: () => void,
     state: ComponentFramework.Dictionary
   ): void {
     this.notifyOutputChanged = notifyOutputChanged;
-    console.log("hi");
     //init function is for initializing component
   }
 
@@ -37,11 +61,15 @@ export class virtualcontrol
    * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
    * @returns ReactElement root react element for the control
    */
-  public updateView(
-    context: ComponentFramework.Context<IInputs>
-  ): React.ReactElement {
-    const props: IHelloWorldProps = { name: "Hello, World!" };
-    return React.createElement(HelloWorld, props);
+  public updateView(context: ComponentFramework.Context<IInputs>): JSX.Element {
+    const props: IUser = {
+      // username: context.parameters.Username.raw || "",
+      first_name: "sumi",
+      id: 1,
+      last_name: "seo",
+      email: "sumi@gmail.com",
+    };
+    return React.createElement(UserLists);
   }
 
   /**

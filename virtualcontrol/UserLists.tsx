@@ -5,7 +5,7 @@ import UserInfoData from "../userinfodata.json";
 import IUserLists from "../types/UserListsType";
 import IUser from "../types/UserType";
 
-export class UserLists extends React.Component<IUserLists> {
+export class UserLists extends React.Component<IUser> {
   public createUserInfoLists(): React.ReactNode {
     console.log(this.props);
     return UserInfoData.map(({ firstName }: IUser) => {
@@ -14,7 +14,12 @@ export class UserLists extends React.Component<IUserLists> {
   }
 
   public render(): React.ReactNode {
-    console.log(this.props);
-    return <ul>{this.createUserInfoLists()}</ul>;
+    console.log(this.props.firstName);
+    return (
+      <>
+        <ul>{this.createUserInfoLists()}</ul>
+        {/* <h2>{this.props.firstName}</h2> */}
+      </>
+    );
   }
 }

@@ -22,6 +22,7 @@ export class virtualcontrol
   private newUserEmail: IUser;
   //The current value of the control, which will be returned
   private currentUserLists: IUserLists;
+  private template: String = "Default Value";
   /**
    * Empty constructor.
    */
@@ -56,6 +57,7 @@ export class virtualcontrol
     this.notifyOutputChanged = notifyOutputChanged;
     //set up proper value in init func
     this.defaultUserLists = UserInfoData;
+    context.parameters.UserFirstName !== null ? "Sumi Seo" : "";
     // this.newUserName = context.parameters.Username.raw || "";
     // this.newUserFirstName == null ? "" : context.parameters.UserFirstName.raw;
     // this.newUserLastName == null ? "" : context.parameters.UserLastName.raw;
@@ -71,12 +73,38 @@ export class virtualcontrol
    * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
    * @returns ReactElement root react element for the control
    */
+
+  private renderControl(
+    context: ComponentFramework.Context<IInputs>
+  ): React.ReactElement {
+    console.log("entered renderControl in index.ts", context.updatedProperties);
+    const _userFirstName =
+      context.parameters.UserFirstName == null
+        ? ""
+        : context.parameters.UserFirstName.raw;
+    const _userLastName =
+      context.parameters.UserLastName == null
+        ? ""
+        : context.parameters.UserLastName.raw;
+    const _userEmail =
+      context.parameters.UserEmail == null
+        ? ""
+        : context.parameters.UserEmail.raw;
+
+    const props: IUser = {
+      firstName: _userFirstName,
+      lastName: _userLastName,
+      userEmail: _userEmail,
+      userId: 1,
+    };
+    return React.createElement(UserLists, props);
+  }
   public updateView(
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
     const props: IUser = {
       // username: context.parameters.Username.raw || "",
-      firstName: "sumi",
+      firstName: "sumiiiiiiii",
       userId: 1,
       lastName: "seo",
       userEmail: "sumi@gmail.com",
@@ -85,7 +113,9 @@ export class virtualcontrol
     console.log("first", context.parameters.UserFirstName.raw);
     console.log("last", context.parameters.UserLastName.raw);
     console.log("email", context.parameters.UserEmail.raw);
-    return React.createElement(UserLists);
+
+    // return React.createElement(UserLists, context.up);
+    return this.renderControl(context);
   }
 
   /**

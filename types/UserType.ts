@@ -1,5 +1,5 @@
 interface IUser {
-  userId: number;
+  userId: number | null;
   firstName: string | null;
   lastName: string | null;
   userEmail: string | null;

@@ -6,8 +6,28 @@ import IUserLists from "../types/UserListsType";
 import IUser from "../types/UserType";
 
 export class UserLists extends React.Component<IUser> {
+  // console.log(UserInfoData)
+
+  private _userDataJsonObj: any;
+  private _newUserObj: IUser;
+
+  public parseJsonData({ userEmail, userId, firstName, lastName }: IUser) {
+    this._userDataJsonObj = JSON.stringify(UserInfoData);
+
+    this._newUserObj = {
+      userId,
+      userEmail,
+      firstName,
+      lastName,
+    };
+    if (userEmail && userId && firstName && lastName) {
+      const newData = [...JSON.parse(this._userDataJsonObj), this._newUserObj];
+      console.log("newData", newData);
+    }
+  }
+
   public createUserInfoLists(): React.ReactNode {
-    console.log(this.props);
+    this.parseJsonData(this.props);
     return UserInfoData.map(({ firstName }: IUser) => {
       return <li key={firstName}>{firstName}</li>;
     });
@@ -18,7 +38,6 @@ export class UserLists extends React.Component<IUser> {
     return (
       <>
         <ul>{this.createUserInfoLists()}</ul>
-        {/* <h2>{this.props.firstName}</h2> */}
       </>
     );
   }

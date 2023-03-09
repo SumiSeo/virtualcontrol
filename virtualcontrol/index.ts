@@ -7,7 +7,7 @@ import { UserLists } from "./UserLists";
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import IUser from "../types/UserType";
 import IUserLists from "../types/UserListsType";
-import { create } from "domain";
+// import { create } from "domain";
 
 export class virtualcontrol
   implements ComponentFramework.ReactControl<IInputs, IOutputs>
@@ -57,14 +57,6 @@ export class virtualcontrol
     this.notifyOutputChanged = notifyOutputChanged;
     //set up proper value in init func
     this.defaultUserLists = UserInfoData;
-    context.parameters.UserFirstName !== null ? "Sumi Seo" : "";
-    // this.newUserName = context.parameters.Username.raw || "";
-    // this.newUserFirstName == null ? "" : context.parameters.UserFirstName.raw;
-    // this.newUserLastName == null ? "" : context.parameters.UserLastName.raw;
-    // this.newUserEmail == null ? "" : context.parameters.UserEmail.raw;
-    console.log(this.newUserFirstName);
-    console.log(this.newUserLastName);
-    console.log(this.newUserEmail);
     //init function is for initializing component
   }
 
@@ -97,18 +89,13 @@ export class virtualcontrol
       userEmail: _userEmail,
       userId: 1,
     };
+
     return React.createElement(UserLists, props);
   }
+
   public updateView(
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
-    const props: IUser = {
-      // username: context.parameters.Username.raw || "",
-      firstName: "sumiiiiiiii",
-      userId: 1,
-      lastName: "seo",
-      userEmail: "sumi@gmail.com",
-    };
     //grab the user input value and add it to json file
     console.log("first", context.parameters.UserFirstName.raw);
     console.log("last", context.parameters.UserLastName.raw);

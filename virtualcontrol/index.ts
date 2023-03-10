@@ -17,9 +17,10 @@ export class virtualcontrol
   //The default value provided from the json data
   private defaultUserLists: IUserLists;
   //The new user value of current user
-  private newUserFirstName: IUser;
-  private newUserLastName: IUser;
-  private newUserEmail: IUser;
+  private _newUserFirstName: string;
+  private _newUserLastName: string;
+  private _newUserEmail: string;
+  private _newUserId: number;
   //The current value of the control, which will be returned
   private currentUserLists: IUserLists;
   private template: String = "Default Value";
@@ -110,7 +111,14 @@ export class virtualcontrol
    * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as “bound” or “output”
    */
   public getOutputs(): IOutputs {
-    return {};
+    return {
+      UserLastName:
+        this._newUserLastName == null ? undefined : this._newUserLastName,
+      UserFirstName:
+        this._newUserFirstName == null ? undefined : this._newUserFirstName,
+      UserEmail: this._newUserEmail == null ? undefined : this._newUserEmail,
+      // UserId: this._newUserId == null ? undefined : this._newUserId,
+    };
   }
 
   /**

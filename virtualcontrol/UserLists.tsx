@@ -1,13 +1,12 @@
 import React from "react";
 import UserInfoData from "../userinfodata.json";
+import axios from "axios";
 
 //types
 import IUserLists from "../types/UserListsType";
 import IUser from "../types/UserType";
 
 export class UserLists extends React.Component<IUser> {
-  // console.log(UserInfoData)
-
   private _userDataJsonObj: any;
   private _newUserObj: IUser;
 

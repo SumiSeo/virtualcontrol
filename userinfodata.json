@@ -58,5 +58,11 @@
     "firstName": "Giraud",
     "lastName": "Pahl",
     "userEmail": "gpahl9@mit.edu"
+  },
+  {
+    "userId": 11,
+    "firstName": "Yeji",
+    "lastName": "Kim",
+    "userEmail": "yeji@mit.edu"
   }
 ]

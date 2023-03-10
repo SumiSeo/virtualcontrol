@@ -1,10 +1,12 @@
 import React from "react";
-import UserInfoData from "../userinfodata.json";
+import UserInfoData from "../../userinfodata.json";
 import axios from "axios";
+import Hostpital from "./Hospital";
 
 //types
-import IUserLists from "../types/UserListsType";
-import IUser from "../types/UserType";
+import IUserLists from "../../types/UserListsType";
+import IUser from "../../types/UserType";
+import Hospital from "./Hospital";
 
 export class UserLists extends React.Component<IUser> {
   private _userDataJsonObj: any;
@@ -37,6 +39,7 @@ export class UserLists extends React.Component<IUser> {
     return (
       <>
         <ul>{this.createUserInfoLists()}</ul>
+        <Hospital />
       </>
     );
   }

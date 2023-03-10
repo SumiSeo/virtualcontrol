@@ -2,7 +2,7 @@ import React from "react";
 import UserInfoData from "../userinfodata.json";
 
 //Component
-import { UserLists } from "./UserLists";
+import { UserLists } from "./components/UserLists";
 //types
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import IUser from "../types/UserType";

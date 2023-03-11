@@ -13,10 +13,43 @@
 }
 
 .box {
+  margin: 20px 50px;
+  background-color: var(--sub-grey-color);
+  width: 100px;
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--sub-grey-color);
 }
 
 .column {
+  margin: 20px 50px;
+  background-color: var(--sub-grey-color);
+  width: 100px;
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--sub-grey-color);
 }
 
 .element {
+  margin: 20px 50px;
+  background-color: var(--sub-grey-color);
+  width: 100px;
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--sub-grey-color);
 }

@@ -17,37 +17,105 @@ const Hospital = (): JSX.Element => {
     console.log("next index", nextIndex);
     console.log("loop");
   }, [currentIndex]);
+
   const onClick = () => {
     console.log("clicked");
   };
 
-  const createHospitalStructure = (): JSX.Element => {
-    console.log("hospital", HospitalData);
-    const hospital = HospitalData.type;
-    console.log("hospital type", hospital);
-    const hospitalName = HospitalData.name;
-
-    const contents = HospitalData["sub-type"].type;
-    console.log("contents", contents);
-    const contentsName = HospitalData["sub-type"].name;
-    if (currentIndex !== null && currentIndex > 1) {
-      console.log("index is 2");
-    }
-
-    //give the all div element
-    //give the classname
-    //add css
+  const generateElements = (nextElement: any): JSX.Element => {
+    console.log("next", nextElement);
+    const currentEntityType = nextElement.type;
+    const currentEntityName = nextElement.name;
+    const currentEntitySubType = nextElement["sub-type"];
 
     return (
-      <div>
-        <div onClick={onClick} className={hospital}>
-          {hospitalName}
+      <>
+        <div onClick={onClick} className={currentEntityType}>
+          {currentEntityName}
         </div>
-      </div>
+        <div>
+          {nextElement.map((el: any) => (
+            <div className={el.type} key={el.firstname}>
+              {el.firstname}
+            </div>
+          ))}
+        </div>
+      </>
     );
   };
 
-  return <div>{createHospitalStructure()}</div>;
+  const generateColumns = (nextElement: any): JSX.Element => {
+    const currentEntityType = nextElement.type;
+    const currentEntityName = nextElement.name;
+    const currentEntitySubType = nextElement["sub-type"];
+
+    return (
+      <>
+        <div onClick={onClick} className={currentEntityType}>
+          {currentEntityName}
+        </div>
+        <div>
+          {currentEntitySubType !== null ? (
+            generateElements(currentEntitySubType)
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </>
+    );
+  };
+
+  const generateContents = (nextElement: any): JSX.Element => {
+    const currentEntityType = nextElement.type;
+    const currentEntityName = nextElement.name;
+    const currentEntitySubType = nextElement["sub-type"];
+
+    return (
+      <>
+        <div onClick={onClick} className={currentEntityType}>
+          {currentEntityName}
+        </div>
+        <div>
+          {currentEntitySubType !== null ? (
+            generateColumns(currentEntitySubType)
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </>
+    );
+  };
+
+  const createHospitalStructure = (): JSX.Element => {
+    const currentEntityType = HospitalData.type;
+    const currentEntityName = HospitalData.name;
+    const currentEntitySubType = HospitalData["sub-type"];
+
+    if (currentEntityType !== null) {
+      generateContents(currentEntitySubType);
+    }
+
+    return (
+      <>
+        <div onClick={onClick} className={currentEntityType}>
+          {currentEntityName}
+        </div>
+        <div>
+          {HospitalData["sub-type"].type !== null ? (
+            generateContents(HospitalData["sub-type"])
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </>
+    );
+  };
+
+  return (
+    <>
+      <div>{createHospitalStructure()}</div>
+    </>
+  );
 };
 
 export default Hospital;

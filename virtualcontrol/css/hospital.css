@@ -57,3 +57,7 @@
   border: 1px solid var(--light-grey-color);
   font-weight: 500;
 }
+
+.hidden {
+  display: block;
+}

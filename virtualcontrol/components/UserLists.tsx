@@ -1,8 +1,6 @@
 import React from "react";
 import UserInfoData from "../../userinfodata.json";
-import axios from "axios";
 import Hostpital from "./Hospital";
-import Patient from "./Patient";
 
 //types
 import IUserLists from "../../types/UserListsType";
@@ -41,8 +39,6 @@ export class UserLists extends React.Component<IUser> {
       <>
         {/* <ul>{this.createUserInfoLists()}</ul> */}
         <Hospital />
-        <div>Test</div>
-        <Patient />
       </>
     );
   }

@@ -2,7 +2,7 @@
   "type": "entity",
   "name": "Saint-Paul",
   "order": "1",
-  "id": 1,
+  "id": "1",
   "sub-type": {
     "type": "box",
     "name": "patients",
@@ -11,8 +11,8 @@
     "sub-type": {
       "type": "column",
       "name": "patient",
-      "id": "1",
       "order": "3",
+      "id": "1",
       "sub-type": [
         {
           "type": "element",

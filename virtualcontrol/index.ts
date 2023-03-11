@@ -98,9 +98,9 @@ export class virtualcontrol
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
     //grab the user input value and add it to json file
-    console.log("first", context.parameters.UserFirstName.raw);
-    console.log("last", context.parameters.UserLastName.raw);
-    console.log("email", context.parameters.UserEmail.raw);
+    // console.log("first", context.parameters.UserFirstName.raw);
+    // console.log("last", context.parameters.UserLastName.raw);
+    // console.log("email", context.parameters.UserEmail.raw);
 
     // return React.createElement(UserLists, context.up);
     return this.renderControl(context);

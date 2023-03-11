@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HospitalData from "../../hospitals.json";
 
 const Hospital = (): JSX.Element => {
+  const [index, setIndex] = useState<number | null>(null);
+  useEffect(() => {
+    const currentIndex = parseInt(HospitalData.order);
+    setIndex(currentIndex);
+
+    const nextIndex =
+      parseInt(HospitalData["sub-type"].order) > currentIndex
+        ? setIndex(parseInt(HospitalData["sub-type"].order))
+        : currentIndex;
+
+    console.log("index of current json object", index);
+    console.log("current Index", currentIndex);
+    console.log("next index", nextIndex);
+  }, [index]);
+  const onClick = () => {
+    console.log("clicked");
+  };
+
   const createHospitalStructure = (): JSX.Element => {
     console.log("hospital", HospitalData);
     const hospital = HospitalData.type;
@@ -11,9 +29,9 @@ const Hospital = (): JSX.Element => {
     const contents = HospitalData["sub-type"].type;
     console.log("contents", contents);
     const contentsName = HospitalData["sub-type"].name;
-
-    //loop over json element is better than do hard-coding
-    //How can I loop over this json object ?
+    if (index !== null && index > 1) {
+      console.log("index is 2");
+    }
 
     //give the all div element
     //give the classname
@@ -21,8 +39,9 @@ const Hospital = (): JSX.Element => {
 
     return (
       <div>
-        <div className={hospital}>{HospitalData.name}</div>
-        <div className={contents}>{contentsName}</div>
+        <div onClick={onClick} className={hospital}>
+          {hospitalName}
+        </div>
       </div>
     );
   };

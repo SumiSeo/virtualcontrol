@@ -35,8 +35,10 @@ const Hospital = (): JSX.Element => {
         </div>
         <div>
           {nextElement.map((el: any) => (
-            <div className={el.type} key={el.firstname}>
-              {el.firstname}
+            <div>
+              <div className={el.type} key={el.firstname}>
+                <h1>{el.firstname}</h1>
+              </div>
             </div>
           ))}
         </div>

@@ -34,8 +34,9 @@
     -->
     <resources>
       <code path="index.ts" order="1"/>
-      <css path="css/hospital.css" order="2"/>
+      <css path="css/hospital.css" order="3"/>
       <css path="css/reset.css" order="1"/>
+      <css path="css/base.css" order="2"/>
       <platform-library name="React" version="16.8.6" />
       <platform-library name="Fluent" version="8.29.0" />
       <!-- UNCOMMENT TO ADD MORE RESOURCES

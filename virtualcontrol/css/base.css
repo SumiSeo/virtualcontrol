@@ -1,0 +1,13 @@
+:root {
+  --main-purple-color: #6c5ce7;
+  --sub-purple-color: #a29bfe;
+  --main-grey-color: #2d3436;
+}
+
+body {
+  color: var(--main-grey-color);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

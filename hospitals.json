@@ -4,7 +4,7 @@
   "order": "1",
   "id": 1,
   "sub-type": {
-    "type": "contents",
+    "type": "box",
     "name": "patients",
     "order": "2",
     "id": "1",

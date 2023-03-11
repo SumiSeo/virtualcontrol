@@ -1,6 +1,8 @@
 :root {
-  --main-grey-color: #2d3436;
-  --sub-grey-color: #636e72;
+  --dark-grey-color: #2d3436;
+  --primary-grey-color: #636e72;
+  --sub-grey-color: #b2bec3;
+  --light-grey-color: #dfe6e9;
 }
 
 body {

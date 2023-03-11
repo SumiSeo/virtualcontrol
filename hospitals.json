@@ -1,15 +1,18 @@
 {
   "type": "entity",
   "name": "Saint-Paul",
+  "order": "1",
   "id": 1,
   "sub-type": {
-    "type": "container",
+    "type": "contents",
     "name": "patients",
+    "order": "2",
     "id": "1",
     "sub-type": {
       "type": "column",
       "name": "patient",
       "id": "1",
+      "order": "3",
       "sub-type": [
         {
           "type": "element",

@@ -17,35 +17,35 @@
         {
           "type": "element",
           "name": "patient",
-          "firstname": "Minji",
+          "firstname": "Minji KIM",
           "age": 19,
           "city": "Seoul"
         },
         {
           "type": "element",
           "name": "patient",
-          "firstname": "Hyerin",
+          "firstname": "Hyerin KANG ",
           "age": 17,
           "city": "Seoul"
         },
         {
           "type": "element",
           "name": "patient",
-          "firstname": "Hanni",
+          "firstname": "Hanni DANIELLE PAM",
           "age": 19,
           "city": "Seoul"
         },
         {
           "type": "element",
           "name": "patient",
-          "firstname": "Danielle",
+          "firstname": "Danielle PIERRE LOPEZ",
           "age": 19,
           "city": "Seoul"
         },
         {
           "type": "element",
           "name": "patient",
-          "firstname": "Hyein",
+          "firstname": "Hyein JULIEN MICHELLE TEST",
           "age": 19,
           "city": "Seoul"
         }

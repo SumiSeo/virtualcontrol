@@ -11,6 +11,7 @@
   border-radius: 10px;
   border: 1px solid var(--dark-grey-color);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .box {
@@ -26,6 +27,7 @@
   border-radius: 10px;
   font-weight: 500;
   border: 1px solid var(--primary-grey-color);
+  cursor: pointer;
 }
 
 .column {
@@ -41,6 +43,7 @@
   border-radius: 10px;
   font-weight: 500;
   border: 1px solid var(--sub-grey-color);
+  cursor: pointer;
 }
 
 .element {
@@ -56,6 +59,7 @@
   border-radius: 10px;
   border: 1px solid var(--light-grey-color);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .hidden {

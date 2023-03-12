@@ -3,10 +3,10 @@ import UserInfoData from "../userinfodata.json";
 
 //Component
 import { UserLists } from "./components/UserLists";
+import Hospital from "./components/Hospital";
 //types
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import IUser from "../types/UserType";
-import IUserLists from "../types/UserListsType";
 // import { create } from "domain";
 
 export class virtualcontrol
@@ -15,15 +15,13 @@ export class virtualcontrol
   private theComponent: ComponentFramework.ReactControl<IInputs, IOutputs>;
   private notifyOutputChanged: () => void;
   //The default value provided from the json data
-  private defaultUserLists: IUserLists;
   //The new user value of current user
   private _newUserFirstName: string;
   private _newUserLastName: string;
   private _newUserEmail: string;
   private _newUserId: number;
   //The current value of the control, which will be returned
-  private currentUserLists: IUserLists;
-  private template: String = "Default Value";
+
   /**
    * Empty constructor.
    */
@@ -56,9 +54,6 @@ export class virtualcontrol
     state: ComponentFramework.Dictionary
   ): void {
     this.notifyOutputChanged = notifyOutputChanged;
-    //set up proper value in init func
-    this.defaultUserLists = UserInfoData;
-    //init function is for initializing component
   }
 
   /**
@@ -91,18 +86,12 @@ export class virtualcontrol
       userId: 1,
     };
 
-    return React.createElement(UserLists, props);
+    return React.createElement(Hospital, props);
   }
 
   public updateView(
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
-    //grab the user input value and add it to json file
-    // console.log("first", context.parameters.UserFirstName.raw);
-    // console.log("last", context.parameters.UserLastName.raw);
-    // console.log("email", context.parameters.UserEmail.raw);
-
-    // return React.createElement(UserLists, context.up);
     return this.renderControl(context);
   }
 

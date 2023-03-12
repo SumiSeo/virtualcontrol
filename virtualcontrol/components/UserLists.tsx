@@ -35,11 +35,6 @@ export class UserLists extends React.Component<IUser> {
 
   public render(): React.ReactNode {
     console.log(this.props.firstName);
-    return (
-      <>
-        {/* <ul>{this.createUserInfoLists()}</ul> */}
-        <Hospital />
-      </>
-    );
+    return <>{/* <ul>{this.createUserInfoLists()}</ul> */}</>;
   }
 }

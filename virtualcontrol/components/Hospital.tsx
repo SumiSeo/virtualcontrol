@@ -1,18 +1,19 @@
-import React, { useRef } from "react";
+import React from "react";
 import HospitalData from "../../hospitals.json";
 
 //types
 import IjsonArgs from "../../types/JsonType";
 
 const Hospital = (): JSX.Element => {
-  const ref = useRef<HTMLDivElement | null>(null);
-
   const onClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    console.log(e.target);
-    console.log("clicked");
     if (e.target instanceof Element) {
-      console.log(e.target.nextElementSibling);
       const nextElements = e?.target?.nextElementSibling?.children;
+      if (nextElements instanceof HTMLCollection) {
+        nextElements[0].classList.remove("hidden");
+        Array.from(nextElements[0].children).filter((child) => {
+          child.classList.toggle("hidden");
+        });
+      }
     }
   };
 
@@ -35,11 +36,9 @@ const Hospital = (): JSX.Element => {
               ))
             ) : (
               <div>
-                {currentEntitySubType !== null ? (
-                  generateTabs(currentEntitySubType)
-                ) : (
-                  <div></div>
-                )}
+                {currentEntitySubType !== null
+                  ? generateTabs(currentEntitySubType)
+                  : ""}
               </div>
             )}
           </div>
@@ -55,25 +54,21 @@ const Hospital = (): JSX.Element => {
 
     return (
       <>
-        <div onClick={onClick} className={currentEntityType}>
-          {currentEntityName}
-        </div>
         <div>
-          {currentEntitySubType !== null ? (
-            generateTabs(currentEntitySubType)
-          ) : (
-            <div></div>
-          )}
+          <div onClick={onClick} className={currentEntityType}>
+            {currentEntityName}
+          </div>
+          <div>
+            {currentEntitySubType !== null
+              ? generateTabs(currentEntitySubType)
+              : ""}
+          </div>
         </div>
       </>
     );
   };
 
-  return (
-    <>
-      <div>{createHospitalStructure()}</div>
-    </>
-  );
+  return <>{createHospitalStructure()}</>;
 };
 
 export default Hospital;

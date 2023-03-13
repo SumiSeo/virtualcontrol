@@ -21,6 +21,7 @@ const Hospital = (): JSX.Element => {
     const currentEntityType = data.type;
     const currentEntityName = data.name;
     const currentEntitySubType = data["sub-type"];
+
     return (
       <>
         <div className="hidden">
@@ -29,11 +30,16 @@ const Hospital = (): JSX.Element => {
           </div>
           <div>
             {Array.isArray(data) ? (
-              data.map((el: any) => (
-                <div onClick={onClick} className={el.type} key={el.firstname}>
-                  {el.firstname}
-                </div>
-              ))
+              data.map((el: any) => {
+                const style = {
+                  width: el.firstname.length * 10,
+                };
+                return (
+                  <div className={el.type} key={el.firstname} style={style}>
+                    {el.firstname}
+                  </div>
+                );
+              })
             ) : (
               <div>
                 {currentEntitySubType !== null
@@ -54,15 +60,13 @@ const Hospital = (): JSX.Element => {
 
     return (
       <>
+        <div onClick={onClick} className={currentEntityType}>
+          {currentEntityName}
+        </div>
         <div>
-          <div onClick={onClick} className={currentEntityType}>
-            {currentEntityName}
-          </div>
-          <div>
-            {currentEntitySubType !== null
-              ? generateTabs(currentEntitySubType)
-              : ""}
-          </div>
+          {currentEntitySubType !== null
+            ? generateTabs(currentEntitySubType)
+            : ""}
         </div>
       </>
     );

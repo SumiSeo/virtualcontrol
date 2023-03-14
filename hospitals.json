@@ -17,37 +17,47 @@
         {
           "type": "element",
           "name": "patient",
+          "order": "4",
           "firstname": "Minji KIM",
           "age": 19,
-          "city": "Seoul"
+          "city": "Seoul",
+          "status": "booking confirmed"
         },
         {
           "type": "element",
           "name": "patient",
+          "order": "4",
           "firstname": "Hyerin KANG ",
           "age": 17,
-          "city": "Seoul"
+          "city": "Seoul",
+          "status": "booking confirmed"
         },
         {
           "type": "element",
           "name": "patient",
+          "order": "4",
           "firstname": "Hanni DANIELLE PAM",
           "age": 19,
-          "city": "Seoul"
+          "city": "Seoul",
+          "status": "booking confirmed"
         },
         {
           "type": "element",
           "name": "patient",
+          "order": "4",
           "firstname": "Danielle PIERRE LOPEZ",
           "age": 19,
-          "city": "Seoul"
+          "city": "Seoul",
+          "status": "canceled"
         },
         {
           "type": "element",
           "name": "patient",
+          "order": "4",
           "firstname": "Hyein JULIEN MICHELLE TEST",
           "age": 19,
-          "city": "Seoul"
+          "city": "Seoul",
+          "status": "booking confirmed"
         }
       ]
     }

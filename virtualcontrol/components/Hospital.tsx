@@ -31,11 +31,16 @@ const Hospital = (): JSX.Element => {
           <div>
             {Array.isArray(data) ? (
               data.map((el: any) => {
+                const canceled = el.status === "canceled" ? "canceled" : "";
                 const style = {
                   width: el.firstname.length * 10,
                 };
                 return (
-                  <div className={el.type} key={el.firstname} style={style}>
+                  <div
+                    className={el.type + canceled}
+                    key={el.firstname}
+                    style={style}
+                  >
                     {el.firstname}
                   </div>
                 );

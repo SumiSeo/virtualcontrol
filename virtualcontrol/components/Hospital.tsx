@@ -4,7 +4,8 @@ import HospitalData from "../../hospitals.json";
 //types
 import IjsonArgs from "../../types/JsonType";
 
-const Hospital = (): JSX.Element => {
+const Hospital = (props: any): JSX.Element => {
+  console.log("props", props);
   const onClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target instanceof Element) {
       const nextElements = e?.target?.nextElementSibling?.children;

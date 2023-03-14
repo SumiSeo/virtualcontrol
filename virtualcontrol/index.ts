@@ -1,11 +1,12 @@
 import React from "react";
-import UserInfoData from "../userinfodata.json";
 
 //Component
 import Hospital from "./components/Hospital";
+
 //types
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
-// import { create } from "domain";
+import IPropsTypes from "../types/PropsTypes";
+import { create } from "domain";
 
 export class virtualcontrol
   implements ComponentFramework.ReactControl<IInputs, IOutputs>
@@ -53,13 +54,24 @@ export class virtualcontrol
   private renderControl(
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
+    const _type =
+      context.parameters.Type.raw === null ? "" : context.parameters.Type.raw;
+    const _name =
+      context.parameters.Name.raw === null ? "" : context.parameters.Name.raw;
+    const props: IPropsTypes = {
+      name: _name,
+      type: _type,
+    };
+
+    // generate a number version of default value
     // return React.createElement(Hospital, props);
-    return React.createElement(Hospital);
+    return React.createElement(Hospital, props);
   }
 
   public updateView(
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
+    const props = {};
     console.log(context.parameters.Type.raw);
     console.log(context.parameters.Name.raw);
     return this.renderControl(context);

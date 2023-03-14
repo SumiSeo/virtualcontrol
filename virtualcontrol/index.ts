@@ -2,11 +2,9 @@ import React from "react";
 import UserInfoData from "../userinfodata.json";
 
 //Component
-import { UserLists } from "./components/UserLists";
 import Hospital from "./components/Hospital";
 //types
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
-import IUser from "../types/UserType";
 // import { create } from "domain";
 
 export class virtualcontrol
@@ -16,10 +14,11 @@ export class virtualcontrol
   private notifyOutputChanged: () => void;
   //The default value provided from the json data
   //The new user value of current user
-  private _newUserFirstName: string;
-  private _newUserLastName: string;
-  private _newUserEmail: string;
-  private _newUserId: number;
+  private _entityOrder: string;
+  private _contentsOrder: string;
+  private _columnOrder: string;
+  private _elementOrder: string;
+
   //The current value of the control, which will be returned
 
   /**
@@ -36,17 +35,6 @@ export class virtualcontrol
    * @param notifyOutputChanged A callback method to alert the framework that the control has new outputs ready to be retrieved asynchronously.
    * @param state A piece of data that persists in one session for a single user. Can be set at any point in a controls life cycle by calling 'setControlState' in the Mode interface.
    */
-
-  public createUserLists(users: IUser[]): React.ReactElement {
-    const props: IUser = {
-      firstName: "sumi",
-      userId: 1,
-      lastName: "seo",
-      userEmail: "sumi@gmail.com",
-    };
-    console.log("create user lists func test");
-    return React.createElement(UserLists);
-  }
 
   public init(
     context: ComponentFramework.Context<IInputs>,
@@ -72,7 +60,8 @@ export class virtualcontrol
   public updateView(
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
-    console.log(context);
+    console.log(context.parameters.Type.raw);
+    console.log(context.parameters.Name.raw);
     return this.renderControl(context);
   }
 

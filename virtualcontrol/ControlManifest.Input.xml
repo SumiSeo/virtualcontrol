@@ -23,6 +23,7 @@
       <value name="Entity" display-name-key="Entity" description-key="Entity">Entity</value>
       <value name="Contents" display-name-key="Contents" description-key="Contents">Contents</value>
       <value name="Column" display-name-key="Column" description-key="Column">Column</value>
+      <value name="Element" display-name-key="Element" description-key="Element">Element</value>
     </property>
     <property name="Name" display-name-key="Name" description-key="Name" of-type="SingleLine.Text" usage="bound" required="true" default-value="[]"  />
     <!--

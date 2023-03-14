@@ -16,7 +16,7 @@
       "sub-type": [
         {
           "type": "element",
-          "name": "patient",
+          "name": "patient-information",
           "order": "4",
           "firstname": "Minji KIM",
           "age": 19,
@@ -25,7 +25,7 @@
         },
         {
           "type": "element",
-          "name": "patient",
+          "name": "patient-information",
           "order": "4",
           "firstname": "Hyerin KANG ",
           "age": 17,
@@ -34,7 +34,7 @@
         },
         {
           "type": "element",
-          "name": "patient",
+          "name": "patient-information",
           "order": "4",
           "firstname": "Hanni DANIELLE PAM",
           "age": 19,
@@ -43,7 +43,7 @@
         },
         {
           "type": "element",
-          "name": "patient",
+          "name": "patient-information",
           "order": "4",
           "firstname": "Hyein JULIEN MICHELLE TEST",
           "age": 19,
@@ -52,7 +52,7 @@
         },
         {
           "type": "element",
-          "name": "patient",
+          "name": "patient-information",
           "order": "4",
           "firstname": "Danielle PIERRE LOPEZ",
           "age": 19,

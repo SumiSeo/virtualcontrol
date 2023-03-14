@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.box {
+.contents {
   margin: 20px 50px;
   background-color: var(--primary-grey-color);
   width: 100px;

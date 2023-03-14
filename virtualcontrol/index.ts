@@ -65,33 +65,14 @@ export class virtualcontrol
   private renderControl(
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
-    console.log("entered renderControl in index.ts", context.updatedProperties);
-    const _userFirstName =
-      context.parameters.UserFirstName == null
-        ? ""
-        : context.parameters.UserFirstName.raw;
-    const _userLastName =
-      context.parameters.UserLastName == null
-        ? ""
-        : context.parameters.UserLastName.raw;
-    const _userEmail =
-      context.parameters.UserEmail == null
-        ? ""
-        : context.parameters.UserEmail.raw;
-
-    const props: IUser = {
-      firstName: _userFirstName,
-      lastName: _userLastName,
-      userEmail: _userEmail,
-      userId: 1,
-    };
-
-    return React.createElement(Hospital, props);
+    // return React.createElement(Hospital, props);
+    return React.createElement(Hospital);
   }
 
   public updateView(
     context: ComponentFramework.Context<IInputs>
   ): React.ReactElement {
+    console.log(context);
     return this.renderControl(context);
   }
 
@@ -100,14 +81,7 @@ export class virtualcontrol
    * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as “bound” or “output”
    */
   public getOutputs(): IOutputs {
-    return {
-      UserLastName:
-        this._newUserLastName == null ? undefined : this._newUserLastName,
-      UserFirstName:
-        this._newUserFirstName == null ? undefined : this._newUserFirstName,
-      UserEmail: this._newUserEmail == null ? undefined : this._newUserEmail,
-      // UserId: this._newUserId == null ? undefined : this._newUserId,
-    };
+    return {};
   }
 
   /**

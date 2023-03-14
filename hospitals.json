@@ -4,7 +4,7 @@
   "order": "1",
   "id": "1",
   "sub-type": {
-    "type": "box",
+    "type": "contents",
     "name": "patients",
     "order": "2",
     "id": "1",
@@ -45,7 +45,7 @@
           "type": "element",
           "name": "patient",
           "order": "4",
-          "firstname": "Danielle PIERRE LOPEZ",
+          "firstname": "Hyein JULIEN MICHELLE TEST",
           "age": 19,
           "city": "Seoul",
           "status": "canceled"
@@ -54,7 +54,7 @@
           "type": "element",
           "name": "patient",
           "order": "4",
-          "firstname": "Hyein JULIEN MICHELLE TEST",
+          "firstname": "Danielle PIERRE LOPEZ",
           "age": 19,
           "city": "Seoul",
           "status": "booking confirmed"

@@ -18,7 +18,12 @@
       -->
     </external-service-usage>
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="Type" display-name-key="Type" description-key="Type" of-type="SingleLine.Text" usage="bound" required="true" default-value="[]"   />
+    <property name="Type" display-name-key="Type" description-key="Type" of-type="Enum" usage="bound" required="true">
+      <value name="DefaultType" display-name-key="Choose the option" description-key="Choose the option" default="true">Choose the option</value>
+      <value name="Entity" display-name-key="Entity" description-key="Entity">Entity</value>
+      <value name="Contents" display-name-key="Contents" description-key="Contents">Contents</value>
+      <value name="Column" display-name-key="Column" description-key="Column">Column</value>
+    </property>
     <property name="Name" display-name-key="Name" description-key="Name" of-type="SingleLine.Text" usage="bound" required="true" default-value="[]"  />
     <!--
       Property node's of-type attribute can be of-type-group attribute.
